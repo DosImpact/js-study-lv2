@@ -41,10 +41,16 @@ state.a = 4;// 마지막만 반영하고파
 
 ## 질문
 
-1. 사실 redux는 불변성 이라는 개념을 사용하고 있기 때문에 observable과 observe를 이용하는 것이 부자연스러울 수 있다.?
+1. 블로그 내용 중 `사실 redux는 불변성 이라는 개념을 사용하고 있기 때문에 observable과 observe를 이용하는 것이 부자연스러울 수 있다.?`라는 말이 이해 안감,  
+   확실히 observe 패턴을 이용하는건 프로퍼티의 변화를 관찰하는것이고 불변성은 객체 자체의 변화를 관찰하는 것이라 다른 맥락인것 같긴함
+
 2. Component 의 mounted 매서드 - 하위 컴포넌트 랜더링할때 쓰는것이 맞는가?
-3. createStore 의 subscribe는 observe로 대체한다. - 원래는 어떻게 구현할까?
-4. observable(reducer()) 에서 initState 에 옵저버 기능이 추가된 getter/setter 접근자 프로퍼티 셋팅이 되었다.
+
+3. 블로그 내용 중 createStore 의 subscribe는 observe로 대체한다. - 원래는 어떻게 구현할까?
+
+4. observable(reducer()) 에서 initState 에 옵저버 기능이 추가된 getter/setter 접근자 프로퍼티 셋팅이 되었다.  
    하지만 리덕스에서 리턴할때 새로운 객체를 반환하는데, 옵저버 기능이 추가된 접근자 프로퍼티가 왜 살아 있지?
-5. JSON.stringify 외 더 좋은 방법
+5. JSON.stringify 말고 더 좋은 깊은 객체 값 비교 방법 찾기
+
 6. TODO만 조작하는데, 왜 a,b 도 notify 되어 rerendering 되는 거지?
+7. 6번 을 보고 디버깅을 하다보니, setter함수에서 prevalue가 제대로 안찍힌다!
